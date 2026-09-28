@@ -8,4 +8,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_executable(radish
     src/main.cpp
     src/network/server.cpp
+    src/parser/parse.cpp
+    src/storage/store.cpp
 )
+
+target_include_directories(radish PRIVATE include)
