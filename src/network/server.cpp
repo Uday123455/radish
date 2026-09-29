@@ -98,6 +98,16 @@ void Server::run()
                     store.get(command.arguments[0]) + "\n";
             }
         }
+        else if (command.name == "DEL") {
+
+            if (command.arguments.size() != 1) {
+                response = "ERR wrong number of arguments\n";
+            }
+            else {
+                store.del(command.arguments[0]);
+                response = "OK\n";
+            }
+        }
         else {
             response = "ERR unknown command\n";
         }

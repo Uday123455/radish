@@ -15,3 +15,11 @@ std::string Store::get(const std::string& key)
 
     return it->second;
 }
+void Store::del(const std::string& key){
+
+    
+    auto it=data.find(key);
+    data.erase(key);
+    
+
+}
