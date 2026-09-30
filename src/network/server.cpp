@@ -94,8 +94,8 @@ void Server::run()
                 response = "ERR wrong number of arguments\n";
             }
             else {
-                response =
-                    store.get(command.arguments[0]) + "\n";
+                const auto value = store.get(command.arguments[0]);
+                response = value ? *value + "\n" : "(nil)\n";
             }
         }
         else if (command.name == "DEL") {
